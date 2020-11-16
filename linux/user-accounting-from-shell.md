@@ -2,7 +2,7 @@
 
 Creation date: 2008-4-16
 
-Keywords: useraccount, fedora
+Keywords: useraccount, linux, fedora
 
 <hr>
 
@@ -17,7 +17,12 @@ Keywords: useraccount, fedora
 
 
 1. To temporary disable a user account:
-   1. Open the password file, either */etc/shadow* or */etc/passwd*, with text editor,
+   1. Open the password file with text editor,
+
+      either */etc/shadow*
+
+      or */etc/passwd*
+
    1. Locate the entry for desired user account, and prefix the password (2nd field) with *. Simply remove the * if want to re-enable this account again.
 
 1. To delete a user account:
