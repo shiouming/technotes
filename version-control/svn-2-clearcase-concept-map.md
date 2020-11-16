@@ -9,4 +9,4 @@ I just moved to a new job recently, the company uses IBM's Rational ClearCase fo
 After learning and practicing ClearCase UCM for some times, I summarised my understanding in below diagram:
 
 
-![SVN to ClearCase UCM concept map](version-control/subversion2clearcase.png)
+![SVN to ClearCase UCM concept map](https://github.com/shiouming/technotes/blob/main/version-control/subversion2clearcase.png)
