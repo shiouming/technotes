@@ -2,7 +2,9 @@
 
 Blog date: 2008-3-31
 
-Keywords: *svn, selinux, linux, apache*
+Keywords: *svn, selinux, linux, fedora, apache*
+
+<hr>
 
 Most of the time I do development on Windows, and use TortoiseSVN for source control. Out of curiosity, this morning I tried to set up SVN server with Apache under Fedora 8, and surprisingly it did not work. Browsers threw error message — HTTP 500 under IE; error code 13 under Firefox, even though I am sure I had entered the correct user credentials.
 
