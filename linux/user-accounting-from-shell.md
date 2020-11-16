@@ -4,6 +4,8 @@ Creation date: 2008-4-16
 
 Keywords: useraccount, fedora
 
+<hr>
+
 1. To create a user account:
 
    `useradd <username>`
