@@ -4,7 +4,7 @@ Blog date: 2010-3-30
 
 Keywords: *svn, clearcase*
 
-<hr>
+---
 
 I just moved to a new job recently, the company uses IBM's Rational ClearCase for version control. ClearCase is a bit complicated to me coming from SVN background. It supports two different versioning models - base and UCM. The company uses the latter.
 

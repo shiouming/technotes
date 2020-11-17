@@ -4,7 +4,7 @@ Creation date: 2008-4-16
 
 Keywords: useraccount, linux, fedora
 
-<hr>
+---
 
 1. To create a user account:
 
