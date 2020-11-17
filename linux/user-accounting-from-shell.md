@@ -23,7 +23,7 @@ Keywords: useraccount, linux, fedora
 
       or */etc/passwd*
 
-   1. Locate the entry for desired user account, and prefix the password (2nd field) with *. Simply remove the * if want to re-enable this account again.
+   1. Locate the entry for desired user account, and prefix the password (2nd field) with asterisk (*). Simply remove the * if want to re-enable this account again.
 
 1. To delete a user account:
 
