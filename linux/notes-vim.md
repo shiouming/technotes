@@ -1,4 +1,4 @@
-# Handy tips for using vim editor
+# Quick notes - vim editor
 
 Creation date: 2008-4-20
 
