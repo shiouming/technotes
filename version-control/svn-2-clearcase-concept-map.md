@@ -2,7 +2,7 @@
 
 Blog date: 2010-3-30
 
-Keywords: *svn, clearcase*
+Tags: *svn, clearcase*
 
 ---
 

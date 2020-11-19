@@ -2,7 +2,7 @@
 
 Creation date: 2008-4-20
 
-Keywords: *vim, vi, linux*
+Tags: *vim, vi, linux*
 
 ---
 

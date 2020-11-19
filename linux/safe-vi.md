@@ -2,7 +2,7 @@
 
 Blog date: 2008-4-21
 
-Keywords: *vim, vi, linux, fedora, redhat, bash*
+Tags: *vim, vi, linux, fedora, redhat, bash*
 
 ---
 

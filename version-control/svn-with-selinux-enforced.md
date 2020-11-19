@@ -2,7 +2,7 @@
 
 Blog date: 2008-3-31
 
-Keywords: *svn, selinux, linux, fedora, apache*
+Tags: *svn, selinux, linux, fedora, apache*
 
 ---
 

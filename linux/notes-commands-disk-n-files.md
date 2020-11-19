@@ -2,7 +2,7 @@
 
 Creation date: 2008-4-27
 
-Keywords: *bash, linux, fedora, redhat*
+Tags: *bash, linux, fedora, redhat*
 
 ---
 
