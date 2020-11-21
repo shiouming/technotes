@@ -41,7 +41,7 @@ Create a new local working branch based on the current branch, then switch to th
 git checkout -b <new-branch-name>
 ```
 
-Add specified untracked/modified files to Git index.
+Add specified untracked/modified files to Git index (a.k.a. staging area).
 ```
 git add <file-1> [<file-2> [...]]
 ```
