@@ -81,3 +81,5 @@ To list, edit, or remove cron jobs (within crontab) for the user.
 ```
 crontab [-l | -e | -ri]
 ```
+Refer [cron job note](notes-cron-job.md) for more details.
+
