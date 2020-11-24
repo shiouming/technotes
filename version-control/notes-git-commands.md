@@ -9,7 +9,7 @@ Tags: *git*
 
 ## Command list
 
-List all branches, with current branch highlighted.
+List all local branches, with current branch highlighted.
 ```
 git branch
 git branch -vv    # include their HEAD commit, and their default remote repo.
@@ -20,7 +20,7 @@ List all remotely tracked repos along with their URL.
 git remote -v
 ```
 
-List commits.
+List commits from current local branch.
 ```
 git log
 ```
@@ -51,6 +51,22 @@ Add all untracked files and modified files to Git index.
 git add .
 ```
 
+Show all modifications done in current local branch.
+```
+git diff           # show all modifications that are neither committed nor added to git index.
+git diff --cached  # show only those changes in git index.
+```
+
+Undo modification of selected files, which are neither committed nor added to git index.
+```
+git checkout -- <modified-file> [<another-modified-file> [...]]
+```
+
+Unstage selected files from Git index. The file's modification will be retained.
+```
+git reset HEAD <staged-file> [<another-staged-file> [...]]
+```
+
 Commit all changes in Git index as single commit.
 ```
 git commit -m "<brief-commit-message>"
@@ -67,14 +83,14 @@ Refer [git squash workflow](#squash-workflow) for details.
 **WARNING**: Once squashed, you'll lose track on original commits' details (e.g. author, commit 
 date). Use it only if makes sense. For example:
 - GOOD practice: combine your fragment commits in your working branch for the same task, merging 
-  them into single commit, before pushing the task's final commit to team's integration branch.
+  them into single commit, before pushing the task's final changeset to team's integration branch.
 - BAD practice: combine multiple tasks' commits or multiple people's commits into single commit,
   hence losing track about when/who/why the code change was introduced.
 ```
 git rebase -i HEAD~<num>
 ```
 
-Push local branch's commits to the default or specified remotely tracked repo.
+Push current local branch's commits to the default or specified remotely tracked repo.
 ```
 git push
 git push <remote-name>
@@ -99,7 +115,7 @@ git push -f <remote-name>
 #   HEAD.
 git rebase -i HEAD~<num>
 
-# then git will displays those commits from specified range in editor, let say <num> is 3:
+# then git will display those commits from specified range in editor, let say <num> is 3:
 pick <commit 3 ID> <commit msg 3>
 pick <commit 2 ID> <commit msg 2>
 pick <commit 1 ID> <commit msg 1>
@@ -111,7 +127,7 @@ squash <commit 2 ID> <commit msg 2>
 squash <commit 1 ID> <commit msg 1>
 # Save the changes and quit editor.
 
-# Step 3: Git will opens another editor for composing commit message for the produced consolidated 
+# Step 3: Git will open another editor, for composing commit message for the produced consolidated 
 #   commit. Once saved, run git log to verify the outcome. You'll see that last 3 commits have 
-#   become 1, having the new commit message.
+#   become 1, and it is using new commit message.
 ```
