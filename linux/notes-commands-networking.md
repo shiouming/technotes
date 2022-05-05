@@ -74,5 +74,5 @@ traceroute <destination-host>
 
 Copy file to a directory in remote machine. Once executed this command a password prompt will be display.
 ```
-scp [-i <key-file-path>] -C <src-file-path> <remote-user>@<remote-address>[:<remote-destination-path>]
+scp [-i <key-file-path>] -C <src-file-path> <remote-user>@<remote-address>:<remote-destination-path>
 ```
