@@ -22,7 +22,7 @@ Ubuntu < 17.10 uses **_ifconfig_**
 
 ### Netplan - setting static IP addresses
 
-Create a custom Netplan config file _/etc/netplan/config.yaml_. Example:
+Create a custom Netplan config file `/etc/netplan/config.yaml`. Example:
 ```bash
 $ sudo vim /etc/netplan/config.yaml
 
@@ -39,7 +39,7 @@ network:
                 - 192.168.56.102/24
             dhcp4: true
 ```
-The _enp0s3_ and _enp0s8_ are network interface name, can be obtained from command:
+The `enp0s3` and `enp0s8` are network interface name, can be obtained from command:
 ```bash
 $ ip a
 ```
@@ -56,9 +56,9 @@ $ sudo netplan apply
 $ ip a
 ```
 
-Reboot the machine:
+Reboot the machine, then verify the result:
 1. Try to SSH into the machine through the static IP.
-1. Run _ip a_ command to check if IP addresses are still in order after reboot.
+1. Run `ip a` command to check if IP addresses are still in order after reboot.
 
 
 ## Fedora
@@ -68,9 +68,9 @@ Network interface config file is located at:
 /etc/sysconfig/network-scripts/ifcfg-<eth0>
 ```
 
-*\<eth0\>* has to be substituted with corresponding network interface name.
+`<eth0>` has to be substituted with corresponding network interface name.
 
-Below is an example of configuration file, *ifcfg-eth1*, that sets NIC *eth1* to use a static IP address permanently:
+Below is an example of configuration file, `ifcfg-eth1`, that sets NIC `eth1` to use a static IP address permanently:
 ```
 # Advanced Micro Devices [AMD] 79c970 [PCnet32 LANCE]
 DEVICE=eth1
