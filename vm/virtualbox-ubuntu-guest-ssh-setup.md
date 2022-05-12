@@ -141,6 +141,19 @@ We can still give VM access to Internet through additional network interface, e.
    where `ubuntu` is the guest VM's default user created during OS installation.
 
 
+**IMPORTANT**:  
+VirtualBox version 6.1.28 contains a security bugfix, which introduced **backward-incompatible behaviour** to Host-Only Network under certain host OS, including Mac OS.
+- The new version will use IP range `192.168.56.x`. **By default**, the range from older version (in my case, `192.168.10.x`) will stop working.
+- I uninstalled the old version by using VirtualBox installer, but it seems that the uninstallation was not clean one.  
+   After I install the new version, I didn't notice that VirtualBox picked up the old host-only network and adapter with broken setting.
+- Actions to be carry out after this upgrade:
+   - Host: delete the old Host-Only adapter, then re-create a new one. We can observe the new IP range setting to be `192.168.56.x`.
+   - Guest: verify VM's network setting, see if still connected to the new Host-Only adapter.
+   - Guest: if applicable, update IP settings in the guest VM OS to use the newly assigned IP.  
+      - static IP (refer [here](https://github.com/shiouming/technotes/blob/main/linux/configure-network-interface.md#ubuntu))
+      - host to IP mapping (`/etc/hosts`)
+- If there are too many VMs to be fixed, there's a workaround at [VirtualBox website](https://www.virtualbox.org/manual/ch06.html#network_hostonly) for using the old IP range. I haven't try it out though.
+
 
 ## Guest VM static IP setup
 
@@ -153,6 +166,6 @@ We don't want the hassle of keep checking VM IP, then keep updating website URL 
 Refer this document for configuring static IP on Ubuntu 17.10 or later:  
 https://github.com/shiouming/technotes/blob/main/linux/configure-network-interface.md#ubuntu
 
-**IMPORTANT**:  
+**REMINDER**:  
 If we choose a static IP different from what we configured in SSH setup (e.g. port forwarding rule), we need to update those settings as well.
 
