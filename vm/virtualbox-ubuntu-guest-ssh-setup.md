@@ -5,7 +5,15 @@ My environment:
 - Host: Mac OS 10.14.6 Mojave
 - VirtualBox: 6.1.34
 
+Table of contents:
+1. [OpenSSH Server](#openssh-server)
+2. [VirtualBox virtual networking - quick overview](#virtualbox-virtual-networking---quick-overview)
+3. [SSH over NAT Network](#ssh-over-nat-network)
+4. [SSH over Host-Only network](#ssh-over-host-only-network)
+   - [IMPORTANT NOTE for VirtualBox 6.1.28 and later](#netplan---setting-static-ip-addresses)
+5. [Guest VM static IP setup](#guest-vm-static-ip-setup)
 
+https://github.com/shiouming/technotes/blob/main/vm/virtualbox-ubuntu-guest-ssh-setup.md
 
 ## OpenSSH Server
 
@@ -141,7 +149,7 @@ We can still give VM access to Internet through additional network interface, e.
    where `ubuntu` is the guest VM's default user created during OS installation.
 
 
-**IMPORTANT**:  
+### IMPORTANT NOTE for VirtualBox 6.1.28 and later:
 VirtualBox version 6.1.28 contains a security bugfix, which introduced **backward-incompatible behaviour** to Host-Only Network under certain host OS, including Mac OS.
 - The new version will use IP range `192.168.56.x`. **By default**, the range from older version (in my case, `192.168.10.x`) will stop working.
 - I uninstalled the old version by using VirtualBox installer, but it seems that the uninstallation was not clean one.  
