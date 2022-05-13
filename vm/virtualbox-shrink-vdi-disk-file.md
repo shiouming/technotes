@@ -26,13 +26,14 @@ Table of contents:
    If missed the timing to access **GRUB** menu, retry by rebooting again.
 1. In GRUB boot menu, choose `Advanced options for Ubuntu`.
 1. Choose to boot with kernel under `recovery mode`. If multiple kernel versions available in menu, choose the latest version.
-1. Choose to access `root shell prompt`. Then press `ENTER` key for maintenance.
+1. Under Recovery Menu, choose to access `root shell prompt`. Then press `ENTER` key for maintenance.
 1. On root shell, run `df -hT` command to list the disks.
+   ![df command output](images/screenshot-df-output.png)
 1. Note down the disk name and type of the interested drive:
    In this example, the 15GB VDI consists of:
    - `/` drive mounted from `ext4` disk `/dev/mapper/ubuntu--vg-ubuntu--lv`.
    - `/boot` drive mounted from `ext4` disk `/dev/sda2`.
-1. We need to use `zerofree` utility to zero fill unutilised disk space. Install it if not available:
+1. Install `zerofree` utility if not available. We will use `zerofree` to zero fill unutilised disk space:
    ```bash
    $ sudo apt list --installed | grep zerofree
    
@@ -51,3 +52,22 @@ Table of contents:
 ## Host: Shrink Virtual Disk VDI File
 
 ### Mac OS Host
+
+1. On host command line, switch to the directory containing the selected VM's VDI file. Take my VM `Ubuntu_20_04_amd64_tmpl` as example:
+   ```bash
+   $ cd ~/VirtualBox\ VMs/Ubuntu_20_04_amd64_tmpl/
+   $ ls -lh
+   # ... few other files
+   -rw-------  1 shiouming  staff   4.3G May 13 17:54 Ubuntu_20_04_amd64_tmpl.vdi
+   ```
+1. Run the VirtualBox utility `VBoxManage` with subcommand to shrink the file:
+   ```bash
+   $ VBoxManage modifyhd --compact Ubuntu_20_04_amd64_tmpl.vdi
+   ```
+1. Verify the VDI disk file size. In this example, it reduced from 4.3GB to 3.4GB:
+   ```bash
+   $ ls -lh
+   # ... few other files
+   -rw-------  1 shiouming  staff   3.4G May 13 18:09 Ubuntu_20_04_amd64_tmpl.vdi
+   ```
+1. If the VM has snapshots, it is more important to run this command against VDI files in `Snapshots` sub-directory.
