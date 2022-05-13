@@ -10,10 +10,9 @@ Table of contents:
 2. [VirtualBox virtual networking - quick overview](#virtualbox-virtual-networking---quick-overview)
 3. [SSH over NAT Network](#ssh-over-nat-network)
 4. [SSH over Host-Only network](#ssh-over-host-only-network)
-   - [IMPORTANT NOTE for VirtualBox 6.1.28 and later](#netplan---setting-static-ip-addresses)
+   - [IMPORTANT NOTE for VirtualBox 6.1.28 and later](#important-note-for-virtualbox-6128-and-later)
 5. [Guest VM static IP setup](#guest-vm-static-ip-setup)
 
-https://github.com/shiouming/technotes/blob/main/vm/virtualbox-ubuntu-guest-ssh-setup.md
 
 ## OpenSSH Server
 
