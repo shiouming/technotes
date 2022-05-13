@@ -2,6 +2,12 @@
 
 Creation date: 2008-5-22
 
+Table of contents:
+1. [Ubuntu](#ubuntu)
+   - [Netplan - setting static IP addresses](#netplan---setting-static-ip-addresses)
+3. [Fedora](#fedora)
+
+
 Tags: *linux, ubuntu, fedora, redhat*
 
 ---
