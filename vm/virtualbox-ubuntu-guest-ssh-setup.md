@@ -60,7 +60,7 @@ both **_NAT Network_** and **_NAT_** have port forwarding feature, can be config
 **Instructions**:  
 (skip to step #3 if NAT Network has already been setup and guest VM's network adapter is connected to it)
 
-1. Create a VirtualBox NAT Network on host, by using menu:
+1. Create a VirtualBox NAT Network on host, through menu:
    ```
    VirtualBox > Preferences > Network
    ```
@@ -115,7 +115,7 @@ We can still give VM access to Internet through additional network interface, e.
 **Instructions**:  
 (skip to step #3 if Host-Only Network has already been setup and guest VM's network adapter is connected to it)
 
-1. Add a virtual adapter to the VirtualBox Host-Only network on host, by using menu:
+1. Add a virtual adapter to the VirtualBox Host-Only network on host, through menu:
    ```
    File > Host Network Manager
    ```
