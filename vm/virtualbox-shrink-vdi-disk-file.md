@@ -12,6 +12,7 @@ My environment:
 Table of contents:
 1. [Guest VM: Defrag and Zero Fill Virtual Disk](#openssh-server)
    - [Ubuntu Server Guest](#ubuntu-server-guest)
+   - [Windows 7 Guest](#windows-7-guest)
 2. [Host: Shrink Virtual Disk VDI File](#ssh-over-nat-network)
    - [Mac OS Host](#mac-os-host)
 
@@ -33,7 +34,7 @@ Table of contents:
    In this example, the 15GB VDI consists of:
    - `/` drive mounted from `ext4` disk `/dev/mapper/ubuntu--vg-ubuntu--lv`.
    - `/boot` drive mounted from `ext4` disk `/dev/sda2`.
-1. Install `zerofree` utility if not available. We will use `zerofree` to zero fill unutilised disk space:
+1. Install "zerofree" utility if not available. We will use "zerofree" to zero fill unutilised disk space:
    ```bash
    $ sudo apt list --installed | grep zerofree
    
@@ -48,6 +49,22 @@ Table of contents:
    Some of these commands must be run quickly right after the previous one, thus it is easier to chain them together.
 1. Run `$ halt` command to shut the VM down. When the screen prints `System halted`, close the VM window, then choose `Power off the machine` when prompted with options.
 
+### Windows 7 Guest
+
+1. Start the Windows 7 guest VM.
+1. Download "SDelete", a small command line utility. It's part of Microsoft's Sysinternals utility collection:  
+   https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete
+1. Quit non-essential software from running, if possible.
+1. Run "Disk Cleanup" tool from Windows for disk housekeeping.  
+   Tip: browser caches may take up quite a lot of space nowadays.
+3. Run "Disk Defragmenter" tool from Windows to defragment the virtual disk.
+4. Run "SDelete" to zero out free space with command:
+   ```
+   > sdelete -z C:
+   ```
+   where `C:` is the disk drive which we want to perform zero-ing operation on.
+3. Shut down the VM.
+
 
 ## Host: Shrink Virtual Disk VDI File
 
@@ -60,7 +77,7 @@ Table of contents:
    # ... few other files
    -rw-------  1 shiouming  staff   4.3G May 13 17:54 Ubuntu_20_04_amd64_tmpl.vdi
    ```
-1. Run the VirtualBox utility `VBoxManage` with subcommand to shrink the file:
+1. Run the VirtualBox utility "VBoxManage" with subcommand to shrink the file:
    ```bash
    $ VBoxManage modifyhd --compact Ubuntu_20_04_amd64_tmpl.vdi
    ```
