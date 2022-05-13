@@ -39,6 +39,9 @@ Reference and Credit:
 1. By default, the shared directory `/mnt/vbox-host-shared/` specified in step #2 is accessible by user group `vboxsf`.  
    Let's give the guest VM user the access permission, by adding the user to group `vboxsf`:
    ```bash
+   $ ll -d /mnt/vbox-host-shared
+   drwxrwx--- 1 root vboxsf 96 May 13 08:36 /mnt/vbox-host-shared/
+   
    # assume 'ubuntu' is the user
    $ sudo usermod -aG vboxsf ubuntu
    ```
