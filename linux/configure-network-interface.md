@@ -9,13 +9,11 @@ Tags: *linux, ubuntu, fedora, redhat*
 ## Ubuntu
 
 Ubuntu >= 17.10 uses **_netplan_**
-
 ```
 /etc/netplan/<yaml_config_file>
 ```
 
 Ubuntu < 17.10 uses **_ifconfig_**
-
 ```
 /etc/network/interfaces
 ```
@@ -46,7 +44,9 @@ $ ip a
 
 Test the new netplan config:
 ```bash
-# While the "try" sub-command is counting down, we should check if the new config works per expectation, e.g. run the "ip" command through a separate SSH session to see the outcome. If it works fine, press ENTER key to accept the file change.
+# While the "try" sub-command is counting down, we should check if the new config works per expectation, 
+#   e.g. run the "ip" command through a separate SSH session to see the outcome. 
+#   If it works fine, press ENTER key to accept the file change.
 $ sudo netplan try
 
 # Apply the config change.
@@ -63,7 +63,7 @@ Reboot the machine, then verify the result:
 
 ## Fedora
 
-Network interface config file is located at:
+Network interface config file:
 ```
 /etc/sysconfig/network-scripts/ifcfg-<eth0>
 ```
