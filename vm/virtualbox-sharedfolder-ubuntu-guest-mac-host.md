@@ -1,7 +1,7 @@
 # VirtualBox Shared Folder between Ubuntu Guest VM and Mac OS Host
 
 My environment:
-- Guest: Ubuntu Server 20.04 (also tested on 18.04)
+- Guest: Ubuntu Server 20.04
 - Host: Mac OS 10.14.6 Mojave
 - VirtualBox: 6.1.34
 
