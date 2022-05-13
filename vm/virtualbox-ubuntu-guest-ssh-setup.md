@@ -1,7 +1,7 @@
 # Setting up SSH Access from VirtualBox Host to Ubuntu Guest VM
 
 My environment:
-- Guest: Ubuntu 20.04
+- Guest: Ubuntu Server 20.04
 - Host: Mac OS 10.14.6 Mojave
 - VirtualBox: 6.1.34
 
