@@ -21,9 +21,9 @@ Table of contents:
 
 ### VM configuration and OS installation
 
-1. Download the Ubuntu Server 20.04 installation disk image from Ubuntu website:
+1. Download the Ubuntu Server 20.04 installation disk image from Ubuntu website:  
    online installer 20.04.4: https://releases.ubuntu.com/20.04.4/ubuntu-20.04.4-live-server-amd64.iso (~1.33GB)
-1. Create `NAT Network` and `Host-only Network` on host, if not available. Below page contain the instructions:  
+1. Create `NAT Network` and `Host-only Network` on host, if not available. Below page contains the instructions:  
    https://github.com/shiouming/technotes/blob/main/vm/virtualbox-ubuntu-guest-ssh-setup.md#ssh-over-nat-network  
    NOTE: If we don't need VM-VM communication, we can use the simpler `NAT` instead of `NAT Network`.  
 1. Create a new VM (as template) with below configuration:
@@ -32,7 +32,7 @@ Table of contents:
    - Storage Disk: VDI type, 15GB (dynamic allocation)
    - Network Adapters:  
       - Change the default `NAT` mode NIC to use `NAT Network` mode instead, and attach it to the previously created NAT Network.
-      - Add second NIC of `Host-only` mode, to enable direct access from host (e.g. SSH), so that no port-forwarding required.
+      - Add second NIC in `Host-only` mode, to enable direct access from host (e.g. SSH), so that no port-forwarding required.
 1. Under the VM's Storage setting, mount the IDE CD drive with the previously downloaded Ubuntu installation image file.
 1. Start the VM, it should boot from the Ubuntu installation CD drive.
 1. Go through the installation steps. Pay attention to following settings:  
@@ -57,7 +57,7 @@ Table of contents:
    ```
 1. Verify storage disk space: `$ df -h`. 
    the root partition (`/`) should be roughly ~13+GB, used ~4.2GB, available ~8.5GB.
-1. If the server name wasn't entered correctly during OS installation, run below command to correct it:
+1. If regret with the server name entered during OS installation, run below command to change it:
    ```bash
    $ sudo hostnamectl set-hostname ubuntu-20-04-amd64-tmpl
    ```
@@ -69,19 +69,18 @@ Table of contents:
    - local loopback - 127.0.0.1
    - enp0s3 - 10.0.2.x (assigned by the NAT Network DHCP server)
    - enp0s8 - 192.168.56.x (assigned by the Host-Only Network DHCP server)
-1. Test SSH by logging in as user `ubuntu`, from host command line to guest VM, via IP of Host-Only NIC:
+1. Test: SSH by logging in as user `ubuntu`, from host command line to guest VM, via IP address of Host-Only NIC:
    ```bash
    $ ssh ubuntu@192.168.56.x
    ```
 1. Revisit the previous [screen of `NAT Network` setting on host](https://github.com/shiouming/technotes/blob/main/vm/virtualbox-ubuntu-guest-ssh-setup.md#ssh-over-nat-network):  
    - Add a port-forwarding rule to this new VM
-   - Test SSH through the port-forwarding.
+   - Test: SSH through the port-forwarding
 1. Follow below page to zero fill and shrink the virtuak disk VDI file. In my setup, this step made the template ~1GB smaller:  
    https://github.com/shiouming/technotes/blob/main/vm/virtualbox-shrink-vdi-disk-file.md
-1. By default, there's an issue if we use certain versions of Ubuntu as VM template.  
-   For Ubuntu 18.10 and newer versions, Ubuntu uses machine-id instead of MAC address in DHCP requests. Since all VM clones will have the same machine-id, this causes all instances to be assigned with the same IP address, even if they have different MAC addresses.  
-   Follow below page to apply the workaround. This fix must be performed as LAST STEP:  
-   TODO
+1. By default, there will be an IP address issue if we use Ubuntu version >= 18.10 as VM template.  
+   Follow below page to apply the workaround. This fix must be performed as LAST STEP in template creation before creating snapshot:  
+   https://github.com/shiouming/technotes/blob/main/vm/virtualbox-workaround-ubuntu-clones-same-ip.md#workaround-1
 1. Shut the VM down. From VirtualBox UI, create a snapshot for this new VM template.  
    In case we accidentally launch the tempate and mess it up in the future, we can still restore the template to this stable state.
 
