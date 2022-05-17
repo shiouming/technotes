@@ -97,7 +97,7 @@ Table of contents:
 1. Once clone operation is complete, log in as user `ububtu`.
 1. Set a new hostname for this new VM:
    ```bash
-   $ sudo hostnamectl set-hostname ubuntu-20-04-amd64-dev-01
+   $ sudo hostnamectl set-hostname <desired-hostname>
    ```
    and manually update the hostname in IP to host mapping file:
    ```bash
@@ -106,4 +106,9 @@ Table of contents:
 1. Run command `$ ip a` to verify all network adapter's IP addresses are in order.
 1. If IP addresses look good, set static IP by following below instruction:  
    https://github.com/shiouming/technotes/blob/main/linux/configure-network-interface.md#ubuntu
-3. Add new port forwarding rule in `NAT Network` setting on host, pointing to the new VM's IP address (for the adapter connected to `NAT Network`).
+1. Add new port forwarding rule in `NAT Network` setting on host, pointing to the new VM's IP address (for the adapter connected to `NAT Network`).
+1. Test outbound HTTPS connection:
+     ```bash
+     wget https://www.google.com
+     ```
+   Delete the `index.html` file downloaded by this test.
