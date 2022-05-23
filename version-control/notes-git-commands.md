@@ -9,6 +9,17 @@ Tags: *git*
 
 ## Command list
 
+Create a new bare repository
+```
+git init --bare
+```
+
+Clone a repository
+```
+git clone <repo-uri> [output-dir-name]
+```
+If the optional `output-dir-name` parameter is not specified, repository name will be used as output directory name.
+
 List all local branches, with current branch highlighted.
 ```
 git branch
