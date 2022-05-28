@@ -9,7 +9,7 @@ Tags: *bash, linux, fedora, redhat*
 
 Display disk space usage for each file system item relative from current directory. Level 1 means current directory only, whereby level 3 will further break down 2 more levels from current directory.
 
-**Warning**: avoid running this command from root (/) directory.
+**Warning**: avoid running this command from root (`/`) directory.
 ```
 du -h --max-depth=1
 # show the sum of size instead of list items one by one
@@ -30,8 +30,14 @@ split -b 10m <input-file> <output_split_files_naming_prefix>
 split -b 10m input_file split_myname_
 ```
 
-To update the file database (/var/lib/mlocate/mlocate.db), and to search file from the same database by filename. Take note that to update the database root privilege is required.
+To update the file database (`/var/lib/mlocate/mlocate.db`), and to search file from the same database by filename. Take note that to update the database root privilege is required.
 ```
 updatedb
 locate <filename-pattern>
 ```
+
+To change permission of all sub-directories under and inclusive of a target directory (files excluded).
+```
+find /path/to/target/dir -type d -exec chmod 755 {} \;
+```
+
