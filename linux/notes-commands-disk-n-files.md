@@ -36,7 +36,7 @@ updatedb
 locate <filename-pattern>
 ```
 
-To change permission of all sub-directories under and inclusive of a target directory (files excluded).
+To change permission of all sub-directories (recursive) under and inclusive of a target directory (files excluded).
 ```
 find /path/to/target/dir -type d -exec chmod 755 {} \;
 ```
