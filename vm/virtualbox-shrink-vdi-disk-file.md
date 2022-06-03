@@ -13,7 +13,7 @@ Table of contents:
 1. [Guest VM: Defrag and Zero Fill Virtual Disk](#openssh-server)
    - [Ubuntu Server Guest](#ubuntu-server-guest)
    - [Windows 7 Guest](#windows-7-guest)
-2. [Host: Shrink Virtual Disk VDI File](#ssh-over-nat-network)
+2. [Host: Shrink Virtual Disk VDI File](#host-shrink-virtual-disk-vdi-file)
    - [Mac OS Host](#mac-os-host)
 
 
