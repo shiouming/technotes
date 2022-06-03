@@ -22,7 +22,7 @@ Table of contents:
 ### Ubuntu Server Guest
 
 1. Start the guest VM.
-1. Log in through the VM main window, then reboot with command `$ sudo shutdown -h now` and perform next step quickly.
+1. Log in through the VM main window, then reboot with command `$ sudo shutdown -r now` and perform next step quickly.
 1. While the VM is booting up, press `ESC` key to access **GRUB** boot menu.  
    If missed the timing to access **GRUB** menu, retry by rebooting again.
 1. In GRUB boot menu, choose `Advanced options for Ubuntu`.
