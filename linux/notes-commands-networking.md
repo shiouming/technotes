@@ -20,6 +20,13 @@ ifconfig down
 ifconfig <ip-address>
 ```
 
+**ss**
+
+```
+# Check processes that listening to network ports (Ubuntu only?)
+sudo ss -ltnp
+```
+
 **netstat**
 
 ```
