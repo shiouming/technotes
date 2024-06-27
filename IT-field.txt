@@ -1,0 +1,53 @@
+IT field
+|
++-- Software Development
+|       |
+|       +-- Game Development
+|       +-- Desktop App Development
+|       +-- Mobile App Development
+|       +-- Web Front-End Development
+|       +-- Back-End Development
+|       +-- No-Code Development
+|       +-- System Software Development (e.g. Firmware, Kernel, Driver)
+|       +-- UI/UX Design
+|       +-- Software QA (manual/automation)
+|       +-- DevOps / DevSecOps
+|
++-- Systems Engineering
+|       |
+|       +-- Network Engineering (Design and Implementation of Network Infrastructure)
+|       +-- Network Administration (Management of Network Devices and Infrastructure)
+|       +-- System Administration (Management of Computers, Servers, Devices)
+|
++-- Cloud Computing
+|       |
+|       +-- Cloud Engineering (Design and Implementation of Cloud Infrastructure)
+|       +-- Cloud Administration (Management of Cloud Infrastructure)
+|
++-- Cybersecurity
+|       |
+|       +-- Network Security
+|       +-- Cloud Security
+|       +-- Application Security
+|       +-- Information Security
+|
++-- Data Science & Analytics
+|       |
+|       +-- Data Analysis
+|       +-- Data Engineering
+|       +-- Artificial Intelligence
+|               |
+|               +-- Natural Language Processing
+|               +-- Computer Vision
+|               +-- Robotics
+|
++-- Computer Hardware
+|       |
+|       +-- Computer Architecture
+|       +-- Digital Logic Design
+|       +-- Embedded Systems
+|       +-- Microelectronics
+|
++-- IT Support
+        |
+        +-- Database Administration?
