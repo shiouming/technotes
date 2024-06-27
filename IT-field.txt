@@ -41,7 +41,7 @@ IT field
 |               +-- Computer Vision
 |               +-- Robotics
 |
-+-- Computer Hardware
++-- Computer Hardware Development
 |       |
 |       +-- Computer Architecture
 |       +-- Digital Logic Design
