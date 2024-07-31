@@ -1,4 +1,4 @@
-IT field
+IT field (2024)
 |
 +-- Software Development
 |       |
@@ -7,17 +7,18 @@ IT field
 |       +-- Mobile App Development
 |       +-- Web Front-End Development
 |       +-- Back-End Development
-|       +-- No-Code Development
 |       +-- System Software Development (e.g. Firmware, Kernel, Driver)
+|       +-- No-Code Development
 |       +-- UI/UX Design
 |       +-- Software QA (manual/automation)
 |       +-- DevOps / DevSecOps
 |
-+-- Systems Engineering
++-- Systems Engineering & Administration
 |       |
 |       +-- Network Engineering (Design and Implementation of Network Infrastructure)
-|       +-- Network Administration (Management of Network Devices and Infrastructure)
+|       +-- Network Administration (Management of Network Infrastructure)
 |       +-- System Administration (Management of Computers, Servers, Devices)
+|       +-- Database Administration
 |
 +-- Cloud Computing
 |       |
@@ -42,12 +43,8 @@ IT field
 |               +-- Robotics
 |
 +-- Computer Hardware Development
-|       |
-|       +-- Computer Architecture
-|       +-- Digital Logic Design
-|       +-- Embedded Systems
-|       +-- Microelectronics
-|
-+-- IT Support
         |
-        +-- Database Administration?
+        +-- Computer Architecture
+        +-- Digital Logic Design
+        +-- Embedded Systems
+        +-- Microelectronics
