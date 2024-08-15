@@ -21,12 +21,13 @@ Table of contents:
 
 ### Ubuntu Server Guest
 
-1. Start the guest VM.
-1. Log in through the VM main window, then reboot with command `$ sudo shutdown -r now` and perform next step quickly.
-1. While the VM is booting up, press `ESC` key to access **GRUB** boot menu.  
-   If missed the timing to access **GRUB** menu, retry by rebooting again.
-1. In GRUB boot menu, choose `Advanced options for Ubuntu`.
-1. Choose to boot with kernel under `recovery mode`. If multiple kernel versions available in menu, choose the latest version.
+1. Access `Recovery mode` of the Ubuntu guest VM:
+   1. Start the guest VM, then log in through the VM main window.
+   1. Reboot with command `$ sudo shutdown -r now` and **perform next step quickly**.
+   1. While the VM is booting up, press `ESC` key to access **GRUB** boot menu.  
+      If missed the timing to access **GRUB** menu, retry by rebooting again.
+   1. In GRUB boot menu, choose `Advanced options for Ubuntu`.
+   1. Choose to boot with kernel under `recovery mode`. If multiple kernel versions available in menu, choose the latest version.
 1. Under Recovery Menu, choose to access `root shell prompt`. Then press `ENTER` key for maintenance.
 1. On root shell, run `df -hT` command to list the disks.
    ![df command output](images/screenshot-df-output.png)
@@ -46,7 +47,7 @@ Table of contents:
    $ systemctl stop systemd-journal* && sudo swapoff -a && mount -n -o remount,ro -t ext4 /dev/mapper/ubuntu--vg-ubuntu--lv / && zerofree -v /dev/mapper/ubuntu--vg-ubuntu--lv
    $ systemctl stop systemd-journal* && sudo swapoff -a && mount -n -o remount,ro -t ext4 /dev/sda2 /boot && zerofree -v /dev/sda2
    ```
-   Some of these commands must be run quickly right after the previous one, thus it is easier to chain them together.
+   Some of these commands must be run quickly right after the previous one, thus we choose to chain them together into single long command.
 1. Run `$ halt` command to shut the VM down. When the screen prints `System halted`, close the VM window, then choose `Power off the machine` when prompted with options.
 
 ### Windows 7 Guest
