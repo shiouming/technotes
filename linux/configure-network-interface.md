@@ -43,6 +43,8 @@ network:
                 - 192.168.56.102/24
             dhcp4: true
 ```
+Optionally, set `dhcp4` value as `false` if do not want to have two IP addresses (static + dynamic) associated to the same network interface.
+
 The `enp0s3` and `enp0s8` are network interface name, can be obtained from command:
 ```bash
 $ ip a
